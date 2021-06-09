@@ -29,6 +29,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.textfield.TextInputEditText;
+import androidx.appcompat.widget.Toolbar;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -55,7 +56,9 @@ public class AddArtistActivity extends AppCompatActivity implements DatePickerDi
     @BindView(R.id.etLugarNacimiento)
     TextInputEditText etLugarNacimiento;
     @BindView(R.id.etNotas)
-    TextInputEditText etNotas;
+    EditText etNotas;
+    @BindView(R.id.toolbar_artist)
+    Toolbar toolbar_artist;
 
     private Artista mArtista;
     private Calendar mCalendar;
@@ -72,6 +75,7 @@ public class AddArtistActivity extends AppCompatActivity implements DatePickerDi
     }
 
     private void configActionBar() {
+        setSupportActionBar(toolbar_artist);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
