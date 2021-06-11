@@ -32,6 +32,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.datepicker.CalendarConstraints;
+import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -47,7 +49,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class DetalleActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+public class DetalleActivity extends AppCompatActivity {
 
     private static final int RC_PHOTO_PICKER = 21;
 
@@ -284,7 +286,7 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
         containerMain.setNestedScrollingEnabled(!enable);
     }
 
-    @Override
+    /*@Override
     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
         mCalendar.setTimeInMillis(System.currentTimeMillis());
         mCalendar.set(Calendar.YEAR, year);
@@ -295,17 +297,33 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
                 mCalendar.getTimeInMillis()));
         mArtista.setFechaNacimiento(mCalendar.getTimeInMillis());
         etEdad.setText(getEdad(mCalendar.getTimeInMillis()));
-    }
+    }*/
 
     @OnClick(R.id.etFechaNacimiento)
     public void onSetFecha() {
-        DialogSelectorFecha selectorFecha = new DialogSelectorFecha();
+        MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
+        builder.setSelection(mArtista.getFechaNacimiento());
+
+        CalendarConstraints.Builder contrains = new CalendarConstraints.Builder();
+        contrains.setOpenAt(mArtista.getFechaNacimiento());
+        builder.setCalendarConstraints(contrains.build());
+
+        MaterialDatePicker<?> picker = builder.build();
+        picker.addOnPositiveButtonClickListener(selection -> {
+            etFechaNacimiento.setText(new SimpleDateFormat("dd/MM/yyyy", Locale.ROOT)
+                    .format(selection));
+            mArtista.setFechaNacimiento((Long) selection);
+            etEdad.setText(getEdad((Long) selection));
+        });
+        picker.show(getSupportFragmentManager(), picker.toString());
+
+        /*DialogSelectorFecha selectorFecha = new DialogSelectorFecha();
         selectorFecha.setListener(DetalleActivity.this);
 
         Bundle args = new Bundle();
         args.putLong(DialogSelectorFecha.FECHA, mArtista.getFechaNacimiento());
         selectorFecha.setArguments(args);
-        selectorFecha.show(getSupportFragmentManager(), DialogSelectorFecha.SELECTED_DATE);
+        selectorFecha.show(getSupportFragmentManager(), DialogSelectorFecha.SELECTED_DATE);*/
     }
 
 
