@@ -9,18 +9,15 @@ package com.alain.cursos.top;
  * Cursos Android ANT
  */
 
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.DatePicker;
 import android.widget.EditText;
 
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.Toolbar;
@@ -286,18 +283,6 @@ public class DetalleActivity extends AppCompatActivity {
         containerMain.setNestedScrollingEnabled(!enable);
     }
 
-    /*@Override
-    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-        mCalendar.setTimeInMillis(System.currentTimeMillis());
-        mCalendar.set(Calendar.YEAR, year);
-        mCalendar.set(Calendar.MONTH, month);
-        mCalendar.set(Calendar.DAY_OF_MONTH, day);
-
-        etFechaNacimiento.setText(new SimpleDateFormat("dd/MM/yyyy", Locale.ROOT).format(
-                mCalendar.getTimeInMillis()));
-        mArtista.setFechaNacimiento(mCalendar.getTimeInMillis());
-        etEdad.setText(getEdad(mCalendar.getTimeInMillis()));
-    }*/
 
     @OnClick(R.id.etFechaNacimiento)
     public void onSetFecha() {
@@ -317,13 +302,6 @@ public class DetalleActivity extends AppCompatActivity {
         });
         picker.show(getSupportFragmentManager(), picker.toString());
 
-        /*DialogSelectorFecha selectorFecha = new DialogSelectorFecha();
-        selectorFecha.setListener(DetalleActivity.this);
-
-        Bundle args = new Bundle();
-        args.putLong(DialogSelectorFecha.FECHA, mArtista.getFechaNacimiento());
-        selectorFecha.setArguments(args);
-        selectorFecha.show(getSupportFragmentManager(), DialogSelectorFecha.SELECTED_DATE);*/
     }
 
 
