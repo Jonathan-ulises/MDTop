@@ -48,11 +48,17 @@
         <item name="android:layout_marginTop">@dimen/item_padding_vertical</item>
     </style>
 
-    <!--ALERT DIALOG-->
-    <style name="PickerDialogCut" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+
+    <!--PICKERS-->
+    <style name="PickerDialogCut" parent="BasePickerDialogCut">
+
+    </style>
+
+    <style name="BasePickerDialogCut" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
         <item name="materialCalendarHeaderLayout">@null</item>
     </style>
-    
+
+    <!--ALERT DIALOG-->
     <style name="MyMaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="colorPrimary">@color/color_primary_variant</item>
     </style>
