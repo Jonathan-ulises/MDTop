@@ -28,6 +28,7 @@ import androidx.core.content.ContextCompat;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -216,7 +217,9 @@ public class AddArtistActivity extends AppCompatActivity implements DatePickerDi
     public void imageEvents(View view) {
         switch (view.getId()) {
             case R.id.imgDeleteFoto:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this)
+
+                //AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.detalle_dialogDelete_title)
                         .setMessage(String.format(Locale.ROOT,
                                 getString(R.string.detalle_dialogDelete_message),
@@ -241,7 +244,8 @@ public class AddArtistActivity extends AppCompatActivity implements DatePickerDi
     private void showAddPhotoDialog() {
         final EditText etFotoUrl = new EditText(this);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        //AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.addArtist_dialogUrl_title)
                 .setPositiveButton(R.string.label_dialog_add, (dialogInterface, i)->
                         configImageView(etFotoUrl.getText().toString().trim()))

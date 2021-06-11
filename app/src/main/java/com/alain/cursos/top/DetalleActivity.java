@@ -32,6 +32,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -316,7 +317,10 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
     public void photoHandler(View view) {
         switch (view.getId()) {
             case R.id.imgDeleteFoto:
-                AlertDialog.Builder builder = new AlertDialog.Builder(this)
+
+
+                //AlertDialog.Builder builder = new AlertDialog.Builder(this)
+                MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this)
                         .setTitle(R.string.detalle_dialogDelete_title)
                         .setMessage(String.format(Locale.ROOT,
                                 getString(R.string.detalle_dialogDelete_message),
@@ -342,7 +346,8 @@ public class DetalleActivity extends AppCompatActivity implements DatePickerDial
     private void showAddPhotoDialog() {
         final EditText etFotoUrl = new EditText(this);
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        //AlertDialog.Builder builder = new AlertDialog.Builder(this)
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this)
                 .setTitle(R.string.addArtist_dialogUrl_title)
                 .setPositiveButton(R.string.label_dialog_add, (dialogInterface, i)->
                     savePhotoUrlArtist(etFotoUrl.getText().toString().trim()))
