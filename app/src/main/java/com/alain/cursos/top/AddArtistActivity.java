@@ -190,8 +190,10 @@ public class AddArtistActivity extends AppCompatActivity {
     @OnClick(R.id.etFechaNacimiento)
     public void onSetFecha() {
 
-
         MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
+
+        builder.setTheme(R.style.PickerDialogCut);
+
         MaterialDatePicker<?> picker = builder.build();
         picker.addOnPositiveButtonClickListener(selection -> {
             etFechaNacimiento.setText(new SimpleDateFormat("dd/MM/yyyy", Locale.ROOT)

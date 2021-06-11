@@ -289,6 +289,8 @@ public class DetalleActivity extends AppCompatActivity {
         MaterialDatePicker.Builder<Long> builder = MaterialDatePicker.Builder.datePicker();
         builder.setSelection(mArtista.getFechaNacimiento());
 
+        builder.setTheme(R.style.PickerDialogCut);
+
         CalendarConstraints.Builder contrains = new CalendarConstraints.Builder();
         contrains.setOpenAt(mArtista.getFechaNacimiento());
         builder.setCalendarConstraints(contrains.build());

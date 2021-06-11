@@ -24,6 +24,9 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.MyTheme.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.MyTheme.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.MyTheme.LargeComponent</item>
+
+        <!--CUSTOM COMPONENT STYLE-->
+        <item name="materialAlertDialogTheme">@style/MyMaterialAlertDialog</item>
     </style>
     
     <style name="Base.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
