@@ -187,7 +187,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     @Override
     //public void onItemClick(Artista artista) {
     //public void onItemClick(Artista artista, View view) {
-    public void onItemClick(Artista artista, View imgPhoto, View tvNote) {
+    //public void onItemClick(Artista artista, View imgPhoto, View tvNote) {
+    public void onItemClick(Artista artista, View imgPhoto, View tvNote, View tvNombre, View tvOrden) {
         Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
         intent.putExtra(Artista.ID, artista.getId());
         //startActivity(intent);
@@ -195,10 +196,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         Pair<View, String> imgPair = Pair.create(imgPhoto, imgPhoto.getTransitionName());
         Pair<View, String> notePair = Pair.create(tvNote, tvNote.getTransitionName());
+        Pair<View, String> nombrePair = Pair.create(tvNombre, tvNombre.getTransitionName());
+        Pair<View, String> ordenPair = Pair.create(tvOrden, tvOrden.getTransitionName());
 
 
         //ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view,getString(R.string.tn_foto));
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, imgPair, notePair);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, imgPair, notePair, nombrePair, ordenPair);
         startActivity(intent, options.toBundle());
 
     }

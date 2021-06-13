@@ -24,6 +24,7 @@
             style="@style/MyTheme.DayNight.TextInputLayout">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNombre"
+                android:transitionName="@string/tn_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/artist_hint_nombre"
@@ -122,6 +123,7 @@
                 style="@style/MyTheme.DayNight.TextInputLayout">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etOrden"
+                    android:transitionName="@string/tn_orden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/artist_hint_orden"

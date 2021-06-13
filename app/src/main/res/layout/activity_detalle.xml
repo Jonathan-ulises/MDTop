@@ -15,9 +15,10 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
+            android:transitionName="@string/tn_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            
+
             app:contentScrim="@color/color_collapsing_toolbar_layout"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar"
