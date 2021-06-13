@@ -33,8 +33,8 @@
         <!--<item name="android:windowEnterTransition">@android:transition/fade</item>-->
 
         <!--fade-->
-        <!--<item name="android:windowEnterTransition">@transition/fade_in</item>
-        <item name="android:windowExitTransition">@transition/fade_out</item>-->
+        <item name="android:windowEnterTransition">@transition/fade_in</item>
+        <item name="android:windowExitTransition">@transition/fade_out</item>
 
         <!--slide-->
         <!--<item name="android:windowEnterTransition">@transition/slide_end</item>
@@ -45,8 +45,8 @@
         <item name="android:windowExitTransition">@transition/explode</item>-->
 
         <!--compuesta-->
-        <item name="android:windowEnterTransition">@transition/transition_enter_alt</item>
-        <item name="android:windowExitTransition">@transition/fade_out</item>
+        <!--<item name="android:windowEnterTransition">@transition/transition_enter_alt</item>
+        <item name="android:windowExitTransition">@transition/fade_out</item>-->
         
         <item name="android:windowSharedElementEnterTransition">@transition/share_elements</item>
         <item name="android:windowSharedElementExitTransition">@transition/share_elements</item>
