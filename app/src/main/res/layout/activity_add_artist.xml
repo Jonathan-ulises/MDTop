@@ -18,8 +18,8 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_artist"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="?toolbarStyle"/>
+            android:layout_height="wrap_content" />
+        <!--style="?toolbarStyle"-->
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
