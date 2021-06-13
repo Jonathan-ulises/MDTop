@@ -35,4 +35,5 @@
     <string name="addAetist_help_required">Requerido</string>
     <string name="addAetist_help_estaturaMin">Estatura Minima 50CM</string>
     <string name="tn_foto">tnPhoto</string>
+    <string name="tn_note">tnNote</string>
 </resources>

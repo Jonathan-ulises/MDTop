@@ -153,6 +153,9 @@
             style="@style/MyTheme.DayNight.TextInputLayout">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etNotas"
+
+                android:transitionName="@string/tn_note"
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:hint="@string/artist_hint_notas"

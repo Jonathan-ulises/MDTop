@@ -58,7 +58,7 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ViewHold
 
         //holder.setListener(artista, listener);
 
-        holder.setListener(artista, holder.imgFoto, listener);
+        holder.setListener(artista, holder.imgFoto, holder.tvNotes, listener);
 
         holder.tvNombre.setText(artista.getNombreCompleto());
         holder.tvNotes.setText(artista.getNotas());
@@ -113,10 +113,10 @@ public class ArtistaAdapter extends RecyclerView.Adapter<ArtistaAdapter.ViewHold
             ButterKnife.bind(this, itemView);
         }
 
-        void setListener(final Artista artista, View imagePhoto, final OnItemClickListener listener){
+        void setListener(final Artista artista, View imagePhoto, View tvNote, final OnItemClickListener listener){
             containerMain.setOnClickListener(view ->
                     //listener.onItemClick(artista));
-                    listener.onItemClick(artista, imagePhoto));
+                    listener.onItemClick(artista, imagePhoto, tvNote));
 
             containerMain.setOnLongClickListener(view -> {
                 listener.onLongItemClick(artista);

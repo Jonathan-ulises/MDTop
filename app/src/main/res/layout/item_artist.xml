@@ -13,7 +13,9 @@
     <!-- SUPPORTING VISUALS -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgFoto"
+
         android:transitionName="@string/tn_foto"
+
         android:layout_width="@dimen/img_item_size"
         android:layout_height="@dimen/img_item_size"
         android:src="@drawable/ic_account_box"
@@ -53,6 +55,9 @@
     <!-- SECUNDARY TEXT -->
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tvNotes"
+
+        android:transitionName="@string/tn_note"
+
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:hint="@string/artist_hint_notas"
