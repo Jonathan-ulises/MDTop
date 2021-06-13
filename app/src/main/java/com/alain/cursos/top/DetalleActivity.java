@@ -20,6 +20,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
@@ -149,12 +150,16 @@ public class DetalleActivity extends AppCompatActivity {
                 toolbar.getNavigationIcon().setTint(Color.WHITE);
             }*/
 
-            float percentage = Math.abs((float)Math.abs(verticalOffset) / appBarLayout.getTotalScrollRange() - 1);
+            if (AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES){
+                float percentage = Math.abs((float)Math.abs(verticalOffset) / appBarLayout.getTotalScrollRange() - 1);
 
-            int colorValue = (int)(percentage * 255);
-            if (toolbar.getNavigationIcon() != null) {
-                toolbar.getNavigationIcon().setTint(Color.rgb(colorValue,colorValue,colorValue));
+                int colorValue = (int)(percentage * 255);
+                if (toolbar.getNavigationIcon() != null) {
+                    toolbar.getNavigationIcon().setTint(Color.rgb(colorValue,colorValue,colorValue));
+                }
             }
+
+
 
         });
 
@@ -196,9 +201,20 @@ public class DetalleActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_save) {
-            saveOrEdit();
+
+        switch (item.getItemId()){
+            case android.R.id.home:
+                finish();
+                break;
+            case R.id.action_save:
+                saveOrEdit();
+                break;
+
         }
+
+        /*if (item.getItemId() == R.id.action_save) {
+            saveOrEdit();
+        }*/
         return super.onOptionsItemSelected(item);
     }
 
