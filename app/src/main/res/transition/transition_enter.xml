@@ -18,7 +18,7 @@
         android:startDelay="500">
 
         <targets>
-            <target android:targetId="@id/app_bar   "/>
+            <target android:targetId="@id/app_bar"/>
         </targets>
     </fade>
 
