@@ -27,6 +27,11 @@
 
         <!--CUSTOM COMPONENT STYLE-->
         <item name="materialAlertDialogTheme">@style/MyMaterialAlertDialog</item>
+
+
+        <!--TRANSICIONES-->
+        <item name="android:windowEnterTransition">@android:transition/fade</item>
+        <item name="android:windowExitTransition">@android:transition/fade</item>
     </style>
     
     <style name="Base.MaterialThemeBuilder" parent="Theme.MaterialComponents.DayNight.NoActionBar">

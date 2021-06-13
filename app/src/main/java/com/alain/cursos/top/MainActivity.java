@@ -9,6 +9,7 @@ package com.alain.cursos.top;
  * Cursos Android ANT
  */
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -185,7 +186,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     public void onItemClick(Artista artista) {
         Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
         intent.putExtra(Artista.ID, artista.getId());
-        startActivity(intent);
+        //startActivity(intent);
+        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     @Override
@@ -221,7 +223,8 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
         Intent intent = new Intent(MainActivity.this, AddArtistActivity.class);
         intent.putExtra(Artista.ORDEN, adapter.getItemCount()+1);
         //startActivity(intent);
-        startActivityForResult(intent, 1);
+        //startActivityForResult(intent, 1);
+        startActivityForResult(intent, 1, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
     }
 
     private void showMessage(int resource) {

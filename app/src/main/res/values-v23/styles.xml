@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="BaseSplash" parent="BaseSplash">
+    <style name="Splash" parent="BaseSplash">
         <item name="android:navigationBarColor">?colorSecondary</item>
     </style>
 </resources>
