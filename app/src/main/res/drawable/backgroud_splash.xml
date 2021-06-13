@@ -3,7 +3,7 @@
     <item android:drawable="@color/color_surface"/>
 
     <item>
-        <bitmap android:src="@mipmap/ic_launcher"
+        <bitmap android:src="@mipmap/ic_launcher_foreground"
             android:gravity="center"/>
     </item>
 </layer-list>
