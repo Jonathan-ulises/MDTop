@@ -62,5 +62,10 @@
     <style name="MyMaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
         <item name="colorPrimary">@color/color_primary_variant</item>
     </style>
+
+    <style name="splash" parent="MyTheme.DayNight">
+        <item name="android:windowBackground">@drawable/backgroud_splash</item>
+        <item name="android:statusBarColor">@color/color_surface</item>
+    </style>
 </resources>
 
