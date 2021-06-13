@@ -26,4 +26,7 @@
 
     <!--CollapsingToolbarLayout-->
     <color name="color_collapsing_toolbar_layout">@color/color_primary</color>
+
+    <!--SPLASH-->
+    <color name="ic_launcher_background">#424242</color>
 </resources>
