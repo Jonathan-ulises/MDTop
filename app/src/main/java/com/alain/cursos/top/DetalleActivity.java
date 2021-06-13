@@ -204,7 +204,8 @@ public class DetalleActivity extends AppCompatActivity {
 
         switch (item.getItemId()){
             case android.R.id.home:
-                finish();
+                //finish();
+                super.onBackPressed();
                 break;
             case R.id.action_save:
                 saveOrEdit();

@@ -112,7 +112,10 @@ public class AddArtistActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
-                finish();
+                //finish();
+
+                //Para las animaciones
+                finishAfterTransition();
                 break;
             case R.id.action_save:
                 saveArtist();
