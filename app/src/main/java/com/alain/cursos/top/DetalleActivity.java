@@ -143,11 +143,20 @@ public class DetalleActivity extends AppCompatActivity {
 
         toolbarLayout.setExpandedTitleColor(Color.WHITE);
         appBar.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
-            if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
+            toolbarLayout.setTitle("appbarLayout = " + appBarLayout.getTotalScrollRange());
+            etNombre.setText("verticalOffset = " + verticalOffset);
+            /*if (Math.abs(verticalOffset) == appBarLayout.getTotalScrollRange()) {
                 toolbar.getNavigationIcon().setTint(Color.BLACK);
             } else {
                 toolbar.getNavigationIcon().setTint(Color.WHITE);
-            }
+            }*/
+
+            float percentage = (float)Math.abs(verticalOffset) / appBarLayout.getTotalScrollRange();
+
+            //int colorValue = percentage;
+            toolbar.getNavigationIcon().setTint(Color.rgb(127,127,127));
+
+            etApellidos.setText("porcentaje = " + percentage);
         });
 
         configTitle();
