@@ -18,6 +18,7 @@ import android.os.Vibrator;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -183,11 +184,15 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
      *      Métodos implementados por la interface OnItemClickListener
      * ******/
     @Override
-    public void onItemClick(Artista artista) {
+    //public void onItemClick(Artista artista) {
+    public void onItemClick(Artista artista, View view) {
         Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
         intent.putExtra(Artista.ID, artista.getId());
         //startActivity(intent);
-        startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        //startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view,getString(R.string.tn_foto));
+        startActivity(intent, options.toBundle());
+
     }
 
     @Override
