@@ -3,4 +3,7 @@
     android:fadingMode="fade_out"
     android:duration="1000">
 
+    <targets>
+        <target android:excludeId="@android:id/statusBarBackground"/>
+    </targets>
 </fade>
