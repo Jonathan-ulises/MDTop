@@ -26,7 +26,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddArtistActivity"
-            android:label="@string/addArtist_title"/>
+            android:label="@string/addArtist_title"
+            android:theme="@style/MyTheme.DayNight.Add"/>
         <activity
             android:name=".DetalleActivity"
             android:label="@string/detalle_title">

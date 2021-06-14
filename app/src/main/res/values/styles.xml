@@ -17,6 +17,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!--ACTIVITIES-->
+    <style name="MyTheme.DayNight.Add" parent="Base.MyTheme">
+        <item name="android:windowEnterTransition">@transition/slide_end</item>
+    </style>
+
     <style name="ImageViewButton">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>

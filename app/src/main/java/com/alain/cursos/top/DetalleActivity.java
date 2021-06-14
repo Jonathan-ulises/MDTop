@@ -49,13 +49,14 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class DetalleActivity extends AppCompatActivity {
 
     private static final int RC_PHOTO_PICKER = 21;
 
     @BindView(R.id.imgFoto)
-    AppCompatImageView imgFoto;
+    CircleImageView imgFoto;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.toolbar_layout)
@@ -91,7 +92,10 @@ public class DetalleActivity extends AppCompatActivity {
 
     //Nueva vista
     @BindView(R.id.tvName)
-    AppCompatTextView tvName;
+    TextView tvName;
+
+    @BindView(R.id.imgCover)
+    AppCompatImageView imgCover;
 
 
     private Artista mArtista;
@@ -176,6 +180,10 @@ public class DetalleActivity extends AppCompatActivity {
 
 
         });
+
+        RequestOptions options = new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE).centerCrop();
+
+        Glide.with(this).load(R.drawable.img_cover_material_design).apply(options).into(imgCover);
 
         configTitle();
     }
