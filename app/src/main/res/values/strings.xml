@@ -36,6 +36,6 @@
     <string name="addAetist_help_estaturaMin">Estatura Minima 50CM</string>
     <string name="tn_foto">tnPhoto</string>
     <string name="tn_note">tnNote</string>
-    <string name="tn_name">tnNombre</string>
+    <string name="tn_name">tnName</string>
     <string name="tn_orden">tnOrden</string>
 </resources>

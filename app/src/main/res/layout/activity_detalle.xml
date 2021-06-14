@@ -55,7 +55,7 @@
                         android:src="@drawable/ic_earth_box"/>
                 </LinearLayout>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/tvName"
                     android:transitionName="@string/tn_name"
                     android:layout_width="wrap_content"

@@ -23,6 +23,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
@@ -90,7 +91,7 @@ public class DetalleActivity extends AppCompatActivity {
 
     //Nueva vista
     @BindView(R.id.tvName)
-    TextView tvName;
+    AppCompatTextView tvName;
 
 
     private Artista mArtista;
@@ -154,6 +155,14 @@ public class DetalleActivity extends AppCompatActivity {
             } else {
                 toolbar.getNavigationIcon().setTint(Color.WHITE);
             }*/
+
+
+            if(verticalOffset == 0){
+                tvName.setVisibility(View.VISIBLE);
+            } else {
+                tvName.setVisibility(View.GONE);
+            }
+
 
             if (AppCompatDelegate.getDefaultNightMode() != AppCompatDelegate.MODE_NIGHT_YES){
                 float percentage = Math.abs((float)Math.abs(verticalOffset) / appBarLayout.getTotalScrollRange() - 1);
