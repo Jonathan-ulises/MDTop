@@ -15,10 +15,9 @@
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/toolbar_layout"
-            android:transitionName="@string/tn_name"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            app:title="@string/artist_hint_nombre"
             app:contentScrim="@color/color_collapsing_toolbar_layout"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar"
@@ -55,6 +54,23 @@
                         android:id="@+id/imgFromUrl"
                         android:src="@drawable/ic_earth_box"/>
                 </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:transitionName="@string/tn_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/artist_hint_nombre"
+                    android:ellipsize="end"
+                    android:textAppearance="@style/TextAppearance.Design.CollapsingToolbar.Expanded.Shadow"
+                    android:textColor="@android:color/white"
+                    android:layout_gravity="start|bottom"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginBottom="23dp"/>
+
+
+
             </FrameLayout>
 
             <androidx.appcompat.widget.Toolbar

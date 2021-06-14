@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
     //public void onItemClick(Artista artista) {
     //public void onItemClick(Artista artista, View view) {
     //public void onItemClick(Artista artista, View imgPhoto, View tvNote) {
-    public void onItemClick(Artista artista, View imgPhoto, View tvNote, View tvNombre, View tvOrden) {
+    public void onItemClick(Artista artista, View imgPhoto, View tvNote, View tvOrden, View tvName) {
         Intent intent = new Intent(MainActivity.this, DetalleActivity.class);
         intent.putExtra(Artista.ID, artista.getId());
         //startActivity(intent);
@@ -196,12 +196,12 @@ public class MainActivity extends AppCompatActivity implements OnItemClickListen
 
         Pair<View, String> imgPair = Pair.create(imgPhoto, imgPhoto.getTransitionName());
         Pair<View, String> notePair = Pair.create(tvNote, tvNote.getTransitionName());
-        Pair<View, String> nombrePair = Pair.create(tvNombre, tvNombre.getTransitionName());
         Pair<View, String> ordenPair = Pair.create(tvOrden, tvOrden.getTransitionName());
+        Pair<View, String> nombrePair = Pair.create(tvName, tvName.getTransitionName());
 
 
         //ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, view,getString(R.string.tn_foto));
-        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, imgPair, notePair, nombrePair, ordenPair);
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(this, imgPair, notePair, ordenPair, nombrePair);
         startActivity(intent, options.toBundle());
 
     }

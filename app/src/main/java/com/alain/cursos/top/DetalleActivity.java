@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -86,6 +87,10 @@ public class DetalleActivity extends AppCompatActivity {
     TextInputLayout tilApellido;
     @BindView(R.id.tilEstatura)
     TextInputLayout tilEstatura;
+
+    //Nueva vista
+    @BindView(R.id.tvName)
+    TextView tvName;
 
 
     private Artista mArtista;
@@ -168,6 +173,7 @@ public class DetalleActivity extends AppCompatActivity {
 
     private void configTitle() {
         toolbarLayout.setTitle(mArtista.getNombreCompleto());
+        tvName.setText(mArtista.getNombreCompleto());
     }
 
     private void configImageView(String fotoUrl) {
